@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1> List of all the villains/heroes </h1>
+        <h2>Make an account to make a hero/villain! </h2>
+        {% if current_user.is_authenticated %}
+        <main class="container">
+            <h1> MAKE SOMEBODY NEW </h1>
+            <div class="row">
+                <aside class="col-12 col-6">
+                    <h2>Make a Hero/Villain</h2>
+                    {% include "heroform.html" %}
+                </aside>
+            </div>
+        </main>
+        {% endif %}
+        {% for hero in form %}
+            <div class="card">
+                <div class="body">
+                    <h5 class="card-title">{{ hero.name }}</h5>
+                    <h5 class="card-subtitle">{{hero.power }}</h5>
+                    <h6 class="card-subtitle">{{ hero.is_a_hero }}</h6>
+                    <p class="card-text">{{ hero.comics_appeared_in }}</p>
+                    <p class="card-text">{{ hero.description }}</p>
+                    <p class="card-text">{{ hero.back_story }}</p>
+                </div>
+            </div>
+        {% endfor %}        
+    </div>
+</div>
+{% endblock content %}

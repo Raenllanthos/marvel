@@ -1,0 +1,31 @@
+<!-- HTML produced by the Flask -->
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="name-field">
+            {{ form.name.label }}
+            {{ form.name(class = "form-control", placeholder = "place name here: ") }}
+        </fieldset>
+        <fieldset id="power-field">
+            {{ form.power.label }}
+            {{ form.power(class = "form-control", placeholder = "place power here: ") }}
+        </fieldset>
+        <fieldset id="is_a_hero-field">
+            {{ form.is_a_hero.label }}
+            {{ form.is_a_hero() }}
+        </fieldset>
+        <fieldset id="comics_appeared_in-field">
+            {{ form.comics_appeared_in.label }}
+            {{ form.comics_appeared_in(class = "form-control", placeholder = "place comics appeared in here: ") }}
+        </fieldset>
+        <fieldset id="description-field">
+            {{ form.description.label }}
+            {{ form.description(class = "form-control", placeholder = "place description here: ") }}
+        </fieldset>
+        <fieldset id="back_story-field">
+            {{ form.back_story.label }}
+            {{ form.back_story(class = "form-control", placeholder = "place back story here: ") }}
+        </fieldset>
+        {{ form.submit_button(class = "btn btn-primary btn-block") }}
+    </div>
+</form>
